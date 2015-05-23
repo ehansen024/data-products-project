@@ -1,0 +1,38 @@
+Predicting Timber - Shiny Application
+========================================================
+author: Erin Hansen
+date: May 22, 2015
+
+What it does
+========================================================
+
+The Prediciting Timber app predicts the volume of timber a tree will yield given the tree's 
+- height (in feet), and 
+- diameter (in inches).
+
+
+How to use it
+========================================================
+In order to receive a prediction, all the user must do is input the information about their tree in the respective fields and click the ***blue submit*** button.
+
+How it it works
+========================================================
+
+```{r, echo=FALSE}
+library(datasets)
+data(trees)
+```
+The app uses the following model to make its predictions:
+```{r, echo=TRUE}
+prediction <- lm(Volume ~ Girth + Height, data = trees)
+summary(prediction)
+```
+
+
+Where to find it
+========================================================
+Find the application and the associated code at the following links:
+
+https://ehansen024.shinyapps.io/ShinyProject
+https://github.com/ehansen024/data-products-project
+
